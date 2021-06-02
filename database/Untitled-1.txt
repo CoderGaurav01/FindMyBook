@@ -1,0 +1,20 @@
+Books: 
+    - id -> primary key
+    - Name varchar(255)->not null
+    - Price int(11)->default 0->not null
+    - images varchar(255)
+    - author varchar(255)->not null
+    - edition int(3)->not null
+    - Subject  varchar(100)->not null
+    - semester int(1)->not null
+    - availability boolean default true
+    - user_id int--> foreign key user(id)
+    
+ 
+User:
+    - id int ->primary key
+    - Name varchar(255)->not null
+    - Email varchar(255)->not null
+    - contact int(11)-> not null
+    - Address varchar(255)->not null
+    - Password varchar(255)->not null
