@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `books` (
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FOREIGN KEY` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `books` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `fname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `fname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `contact` int NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Constraints for dumped tables

@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($email_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, email, password FROM users WHERE email = ?";
+        $sql = "SELECT id, email, password FROM user WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
