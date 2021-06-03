@@ -162,7 +162,7 @@ button,
 [type=reset],
 [type=submit] {
     -webkit-appearance: button;
-background-color: blue;
+    
 }
 
 button::-moz-focus-inner,
