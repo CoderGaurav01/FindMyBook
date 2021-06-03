@@ -87,3 +87,96 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/sell.css">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .bar,
+        h1,
+        button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-anchor,
+        .fa-coffee {
+            font-size: 200px
+        }
+    </style>
+    <title>Login</title>
+</head>
+
+<body style="background-color: #deedf0">
+    <!-- Navbar -->
+    <div class="top">
+        <div class="bar teal card left-align xlarge">
+            <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal"
+                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="index.html" class="bar-item button padding-large white">Home</a>
+            <a href="index.html#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
+            <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
+            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+        </div>
+
+        <br><br>
+        <div class="back">
+            <div>
+                <div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <form class="box" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                <h1>Login</h1>
+                                <p class="text-muted"> Please enter your login and password!</p>
+                                <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="abc@xyz.com" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                                <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" placeholder="Password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                            </div>
+                            <input type="submit" name="" value="Login">
+                                <div>
+                                    <!-- <input type="submit" name="register" value="New to FindMyBook? Register" >  -->
+
+                                    <!-- <input  type="text" name="register" value="New to FindMyBook? " href="C:\wamp64\www\FindMyBook\register.html"  /> -->
+                                    <a href="register.php">New to FindMyBook? Register</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+</body>
+
+</html>
