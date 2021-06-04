@@ -3,7 +3,7 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$email = $password = $confirm_password = "";
+$email = $password = $confirm_password = $fname = $lname = $city = $state = $zip= $phone= $address="";
 $email_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $email_err = "Email Invalid";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE email = ?";
+        $sql = "SELECT id FROM user WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -62,20 +62,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $confirm_password_err = "Password did not match.";
         }
     }
+    $fname=$_POST["fname"];
+    $lname=$_POST["lname"];
+    $phone=$_POST["phone"];
+    $address=$_POST["address"];
+    $city=$_POST["city"];
+    $state=$_POST["state"];
+    $zip=$_POST["zip"];
+
     
     // Check input errors before inserting in database
     if(empty($email_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
-         
-        if($stmt = mysqli_prepare($link, $sql)){
+        
+        $param_fname=$fname;
+        $param_lname=$lname;
+        $param_email = $email;
+        $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+        $param_contact=$phone;
+        $param_address= $address.",".$city.",".$state.",".$zip;
+        $sql = "INSERT INTO user (fname,lname,email,password,contact,address) VALUES ('$param_fname','$param_lname', '$param_email', '$param_password', $param_contact, '$param_address')";
+        if ($link->query($sql) === TRUE) {
+            header("location: login.php");
+          } else {
+            echo "Error: " . $sql . "<br>" . $link->error;
+          }
+          
+        /*if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_email, $param_password);
+            mysqli_stmt_bind_param($stmt, "ssssis",$param_fname,$param_lname, $param_email, $param_password,$param_contact,$param_address);
             
             // Set parameters
-            $param_email = $email;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+           
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -87,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Close statement
             mysqli_stmt_close($stmt);
-        }
+        }*/
     }
     
     // Close connection
@@ -106,7 +125,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/register.css">
-    
+    <link rel="stylesheet" href="css/normalize.css">
+            <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="public/css/main.css">
     
     <style>
         body,
@@ -142,60 +163,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
         </div>
    
-        <br><br>
-
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Sign Up Form</title>
-            <link rel="stylesheet" href="css/normalize.css">
-            <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="public/css/main.css">
-        </head>
-        <body>
-    
-          <form action="index.html" method="post">
+        <br><br>    
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
           
             <h1>Register Here</h1>
             
             <fieldset>
          
-              <label for="name">First Name:</label>
-              <input type="text" id="name" name="user_name" placeholder="Johny" required>
+              <label for="fname">First Name:</label>
+              <input type="text" id="fname" name="fname" placeholder="Johny" required>
 
-              <label for="name" >Last Name:</label>
-              <input type="text" id="name" name="user_name" placeholder="Christian">
+              <label for="lname" >Last Name:</label>
+              <input type="text" id="lname" name="lname" placeholder="Christian">
               
-              <label for="mail">Email:</label>
-              <input type="email" id="mail" name="user_email" required placeholder="abc@xyz.com">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required placeholder="abc@xyz.com">
+              <span class="invalid-feedback"><?php echo $email_err; ?></span>
               
               <label for="password">Password:</label>
-              <input type="password" id="password" name="user_password">
+              <input type="password" id="password" name="password" required>
+              <span class="invalid-feedback"><?php echo $password_err; ?></span>
+
+              <label for="confirm_password">Confirm Password:</label>
+              <input type="password" id="confirm_password" name="confirm_password" required>
+              <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
 
               <label for="phone">Phone No(+91):</label>
-              <input type="tel" id="phone" name="phone" required size="10" >
+              <input type="tel" id="phone" name="phone" required size="10">
 
               <label for="address">Address: </label>
               <input type="text" id="address" name="address" required placeholder="1234 Main S"> 
               
-              <label for="address"> City: </label>
-              <input type="city" id="address" name="address"   required placeholder="chicago"> 
+              <label for="city"> City: </label>
+              <input type="text" id="city" name="city"   required placeholder="chicago"> 
               
-              <label for="address">State: </label>
-              <input type="state" id="address" name="address" required placeholder="California">       
+              <label for="state">State: </label>
+              <input type="text" id="state" name="state" required placeholder="California">       
               
-              <label for="address">Zip: </label>
-              <input type="zip" id="address" name="address" required placeholder="90011">  
+              <label for="zip">Zip: </label>
+              <input type="zip" id="zip" name="zip" required placeholder="90011">  
+              
         
             </fieldset>
             
          
             
-          <a href="#"   >   <button type="submit">Sign Up </button></a>  
+           <input type="submit" class="btn"value="Sign Up">
           </form>
           
-        </body>
-    </html>
+        
        
         </body>
 </html>
