@@ -1,0 +1,279 @@
+
+    .button {
+        size: 15px;
+        font-family: "Montserrat", sans-serif
+    }
+
+    body,
+    h1, 
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        size: 15px;
+        font-family: "Lato", sans-serif
+    }
+
+    .bar,
+    h1,
+    .button {
+        size: 15px;
+        font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+        font-size: 200px
+    }
+
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+.teal,
+.hover-teal:hover {
+    color: #fff !important;
+    background-color: #009688 !important
+}
+
+.text-teal,
+.hover-text-teal:hover {
+    color: #009688 !important
+}
+
+
+.border-teal,
+.hover-border-teal:hover {
+    border-color: #009688 !important
+}
+
+
+.teal,
+.hover-teal:hover {
+    color: #fff !important;
+    background-color: #009688 !important
+}
+
+
+.bar-block .dropdown-hover,
+.bar-block .dropdown-click {
+    width: 100%
+}
+
+.bar {
+    width: 100%;
+    overflow: hidden
+}
+
+
+
+.bar .bar-item {
+    padding: 10px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: none;
+}
+
+.bar .dropdown-hover,
+.bar .dropdown-click {
+    position: static;
+    float: left
+}
+
+.bar .button {
+    white-space: normal
+}
+
+.bar-block .bar-item {
+    width: 100%;
+    display: block;
+    padding: 4px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0
+}
+
+
+
+
+.block {
+    display: block;
+    width: 80%
+}
+
+.responsive {
+    display: block;
+    overflow-x: auto
+}
+.topbar {
+    border-top: 6px solid #ccc !important
+}
+
+button,
+input,
+select,
+textarea,
+optgroup {
+    font: inherit;
+    margin: 0
+}
+
+optgroup {
+    font-weight: bold
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button;
+background-color: blue;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+
+.btn,
+.button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    
+    
+}
+
+
+.btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.btn,
+.button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.disabled,
+.btn:disabled,
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3
+}
+.dropdown-hover:hover>.button:first-child,
+.dropdown-click:hover>.button:first-child {
+    background-color: #ccc;
+    color: #000
+}
+
+.button,
+.button {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+
+}
+
+.bar .button {
+    white-space: normal
+}
+  .dropdown-hover.mobile,
+    .dropdown-hover.mobile .btn,
+    .dropdown-hover.mobile .button,
+    .dropdown-click.mobile,
+    .dropdown-click.mobile .btn,
+    .dropdown-click.mobile .button {
+        width: 100%
+    }
+
+
+.button:hover {
+    color: #000 !important;
+    background-color: #ccc !important
+}
+
+.padding-large {
+    padding: 12px 24px !important
+}
+
+.homebtn
+{
+max-width: 7em;
+background-color: white;
+color: black;
+}
+
+.book{
+        font-family: "Montserrat", sans-serif;
+        width: 500px;
+        padding: 40px;
+        position: absolute;
+        top: 10%;
+        left: 35%;
+        background: linear-gradient(to right, #f6dfeb,#caf7e3)
+        ;
+        border: 2px solid #3498db;
+        border-radius: 30px;
+        text-align: left;
+        transition: 0.25s;
+        margin-top: 10px;
+}
+
+.book input[type="text"],
+.book input[type="number"] {
+  border: 0;
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 2px solid #0a81ab;
+  padding: 10px 10px;
+  outline: none;
+  color: black;
+  border-radius: 15px;
+  transition: 0.25s
+}
