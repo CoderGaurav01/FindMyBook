@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="C:\wamp64\www\FindMyBook\public\css\sell.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
     <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
     <style>
         body,
         h1,
-        h2,
+        h2, 
         h3,
         h4,
         h5,
@@ -38,12 +39,23 @@
 
 <body style="background-color: #deedf0">
     <!-- Navbar --> <div class="top">
-        <div class="bar teal card left-align xlarge">
-            <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="index.html" class="bar-item button padding-large white">Home</a>
-            <a href="index.html#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
-            <a href="login.html" class="bar-item button hide-small padding-large hover-white">Sell</a>
-            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+        !-- Navbar --> <div class="top">
+            <div class="bar teal card left-align xlarge">
+                <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <a href="index.html" class="bar-item button padding-large white">Home</a>
+                <a href="#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
+                <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
+            
+                <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+            </div>
+    
+            
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="bar-block hide hide-large hide-medium large">
+                <a href="#about_us" class="bar-item button padding-large">About Us</a>
+                <a href="login.php" class="bar-item button padding-large">Sell</a>
+               <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
+            </div>
         </div>
    
         <br><br>
