@@ -129,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body style="background-color: #deedf0">
     <!-- Navbar -->
     <div class="top">
-        <div class="bar teal card left-align xlarge">
+        <div class="bar teal card left-align large">
             <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal"
                 href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
                     class="fa fa-bars"></i></a>

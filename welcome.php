@@ -1,15 +1,39 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+$id=$_SESSION["id"];
+require_once "config.php";
+$sql = "SELECT * FROM user WHERE id=$id";
+$result = $link->query($sql);
+$data = $result->fetch_assoc();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome</title>
+  <title>Welcome User</title>
+  <style>
+           section
+              {
+                text-align: right;
+                margin : 10px;
+             
+               }
+
+            </style>
   
  
   <link rel="stylesheet" href="C:\wamp64\www\FindMyBook\public\css\welcome.css">
 <link rel="stylesheet" href="public/css/style2.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="C:\wamp64\www\FindMyBook\public\css\welcome.css">
+<link rel="stylesheet" type="text/css" href="public/css/welcome.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
 </head>
 <body>
    <div class="bar teal card left-align medium container=100%">
@@ -20,15 +44,7 @@
           </div>
           
            <div class="col order-1 right">
-            <style>
-           section
-              {
-                text-align: right;
-                margin : 10px;
-             
-               }
-
-            </style>
+           
             <section >
                     
 
@@ -60,7 +76,7 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>John Doe</h4>
+                      <h4><?php echo $data["fname"]." ".$data["lname"]?></h4>
                      
                     </div>
                   </div>
@@ -78,7 +94,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                    <?php echo $data["fname"]." ".$data["lname"]?>
                     </div>
                   </div>
                   <hr>
@@ -87,7 +103,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                    <?php echo $data["email"]?>
                     </div>
                   </div>
                   <hr>
@@ -96,7 +112,7 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                    <?php echo $data["contact"]?>
                     </div>
                   </div>
                   <hr>
@@ -106,7 +122,7 @@
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                    <?php echo $data["address"]?>
                     </div>
                   </div>
                   <hr>

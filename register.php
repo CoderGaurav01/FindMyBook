@@ -3,7 +3,7 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$email = $password = $confirm_password = "";
+$email = $password = $confirm_password = $fname = $lname = $city = $state = $zip= $phone= $address="";
 $email_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $email_err = "Email Invalid";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE email = ?";
+        $sql = "SELECT id FROM user WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -62,20 +62,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $confirm_password_err = "Password did not match.";
         }
     }
+    $fname=$_POST["fname"];
+    $lname=$_POST["lname"];
+    $phone=$_POST["phone"];
+    $address=$_POST["address"];
+    $city=$_POST["city"];
+    $state=$_POST["state"];
+    $zip=$_POST["zip"];
+
     
     // Check input errors before inserting in database
     if(empty($email_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
-         
-        if($stmt = mysqli_prepare($link, $sql)){
+        
+        $param_fname=$fname;
+        $param_lname=$lname;
+        $param_email = $email;
+        $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+        $param_contact=$phone;
+        $param_address= $address.",".$city.",".$state.",".$zip;
+        $sql = "INSERT INTO user (fname,lname,email,password,contact,address) VALUES ('$param_fname','$param_lname', '$param_email', '$param_password', $param_contact, '$param_address')";
+        if ($link->query($sql) === TRUE) {
+            header("location: login.php");
+          } else {
+            echo "Error: " . $sql . "<br>" . $link->error;
+          }
+          
+        /*if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_email, $param_password);
+            mysqli_stmt_bind_param($stmt, "ssssis",$param_fname,$param_lname, $param_email, $param_password,$param_contact,$param_address);
             
             // Set parameters
-            $param_email = $email;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+           
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -87,10 +106,112 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Close statement
             mysqli_stmt_close($stmt);
-        }
+        }*/
     }
     
     // Close connection
     mysqli_close($link);
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="public/css/style2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/register.css">
+    <link rel="stylesheet" href="css/normalize.css">
+            <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="public/css/main.css">
+    
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .bar,
+        h1,
+        button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-anchor,
+        .fa-coffee {
+            font-size: 200px
+        }
+    </style>
+    <title>Register</title>
+</head>
+
+<body style="background-color: #deedf0">
+    <!-- Navbar --> <div class="top">
+        <div class="bar teal card left-align large">
+            <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="index.html" class="bar-item button padding-large white">Home</a>
+        
+            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+        </div>
+   
+        <br><br>    
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+          
+            <h1>Register Here</h1>
+            
+            <fieldset>
+         
+              <label for="fname">First Name:</label>
+              <input type="text" id="fname" name="fname" placeholder="Johny" required>
+
+              <label for="lname" >Last Name:</label>
+              <input type="text" id="lname" name="lname" placeholder="Christian">
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required placeholder="abc@xyz.com">
+              <span class="invalid-feedback"><?php echo $email_err; ?></span>
+              
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+              <span class="invalid-feedback"><?php echo $password_err; ?></span>
+
+              <label for="confirm_password">Confirm Password:</label>
+              <input type="password" id="confirm_password" name="confirm_password" required>
+              <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+
+              <label for="phone">Phone No(+91):</label>
+              <input type="tel" id="phone" name="phone" required size="10">
+
+              <label for="address">Address: </label>
+              <input type="text" id="address" name="address" required placeholder="1234 Main S"> 
+              
+              <label for="city"> City: </label>
+              <input type="text" id="city" name="city"   required placeholder="chicago"> 
+              
+              <label for="state">State: </label>
+              <input type="text" id="state" name="state" required placeholder="California">       
+              
+              <label for="zip">Zip: </label>
+              <input type="zip" id="zip" name="zip" required placeholder="90011">  
+              
+        
+            </fieldset>
+            
+         
+            
+           <input type="submit" class="btn"value="Sign Up">
+          </form>
+          
+        
+       
+        </body>
+</html>
