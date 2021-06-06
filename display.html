@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Results</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="public/css/diplay.css">
+  
+    
+    <style>
+        body,
+        h1, 
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .bar,
+        h1,
+        button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-anchor,
+        .fa-coffee {
+            font-size: 200px
+        }
+    </style>
+
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    </style>
+    
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="top">
+        <div class="bar teal card left-align medium">
+            <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="index.html" class="bar-item button padding-large white">Home</a>
+            <a href="#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
+            <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
+            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="bar-block hide hide-large hide-medium large">
+            <a href="#about_us" class="bar-item button padding-large">About Us</a>
+            <a href="login.php" class="bar-item button padding-large">Sell</a>
+           <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
+        </div>
+    </div>
+   
+   
+    <br>
+    <br>
+    
+    <h1 style="text-align: center;">SEARCH RESULT(S):</h1>
+    
+    <br>
+ 
+
+
+
+<table id="customers">
+  <tr>
+    <th>Book Name</th>
+    <th>Author</th>
+    <th>Edition</th>
+    <th>Semester</th>
+    <th>Subject</th>
+    <th>Price</th>
+    <th>Seller Details</th>
+  </tr>
+  <tr>
+    <td>Higher Engineering Mathematics</td>
+    <td>Dr.B.S Grewal</td>
+    <td>39</td>
+    <td>3</td>
+    <td>Applied Mathematics</td>
+    <td>850</td>
+    <td><button class="bmt" type="submit">View Seller Detail</button></td>
+  </tr>
+  <tr>
+    <td>Higher Engineering Mathematics</td>
+    <td>Dr.B.S Grewal</td>
+    <td>39</td>
+    <td>3</td>
+    <td>Applied Mathematics</td>
+    <td>850</td>
+    <td><button type="submit">View Seller Detail</button></td>
+  </tr>
+ 
+</table>
+
+</body>
+</html>
