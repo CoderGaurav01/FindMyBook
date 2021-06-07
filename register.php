@@ -124,11 +124,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/register.css">
-    <link rel="stylesheet" href="css/normalize.css">
-            <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="public/css/main.css">
-    
+    <link rel="stylesheet" href="public\css\register.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+
     <style>
         body,
         h1,
@@ -159,8 +157,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="bar teal card left-align large">
             <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <a href="index.html" class="bar-item button padding-large white">Home</a>
-        
-            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+            <a href="#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
+            <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
         </div>
    
         <br><br>    
@@ -208,7 +206,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
          
             
-           <input type="submit" class="btn"value="Sign Up">
+           <input type="submit" class="btn buttonn"value="Sign Up">
           </form>
           
         

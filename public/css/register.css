@@ -68,7 +68,7 @@ form {
     border-radius: 2px;
   }
   
-  button {
+  .buttonn {
     padding: 19px 39px 18px 39px;
     color: #FFF;
     background-color: #4bc970;
@@ -77,9 +77,21 @@ form {
     font-style: normal;
     border-radius: 5px;
     width: 100%;
-    border: 1px solid #3ac162;
+    border: 1px solid  #4bc970;
     border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    transition-duration: 0.4s;
+    margin-bottom: 10px;
+  }
+  .buttonn:hover {
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #4bc970;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid  #4bc970;
     margin-bottom: 10px;
   }
   
