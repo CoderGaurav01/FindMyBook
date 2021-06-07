@@ -138,9 +138,45 @@ $result = $link->query($sql);
         <button id="myBtn">Edit</button>
         
         <!-- The Modal -->
-        <div id="myModal" class="modal">
+        </td>
         
-          <!-- Modal content -->
+        
+    </tr>
+    <?php 
+                while($rows=$result->fetch_assoc())
+                {
+             ?>
+  <tr>
+    <td><?php echo $rows["name"];?></td>
+    <td><?php echo $rows["author"];?></td>
+    <td><?php echo $rows["edition"];?></td>
+    <td><?php echo $rows["semester"];?></td>
+    <td><?php echo $rows["subject"];?></td>
+    <td><?php echo $rows["price"];?></td>
+    <td><?php echo $rows["availability"];?></td>
+    <td>
+      <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <input name="name" type="hidden" value="<?php echo $rows["name"];?>">
+        <input name="author" type="hidden" value="<?php echo $rows["author"];?>">
+        <input name="edition" type="hidden" value="<?php echo $rows["edition"];?>">
+        <input name="semester" type="hidden" value="<?php echo $rows["edition"];?>">
+        <input name="semester" type="hidden" value="<?php echo $rows["semester"];?>">
+        <input name="subject" type="hidden" value="<?php echo $rows["subject"];?>">
+        <input name="price" type="hidden" value="<?php echo $rows["price"];?>">
+         <button id="myBtn" class="bmt" type="submit">Edit</button>
+      </form>
+    </td>
+  </tr>
+ <?php  }?>
+</table>
+<div class="container">
+  <center><div style="margin: 10px;">
+    <a href="books.php"><button class="btn btn-primary">ADD BOOK</button></a>
+  </div></center>
+</div>
+<div id="myModal" class="modal">
+        
+          
           <div >
             
         
@@ -152,7 +188,7 @@ $result = $link->query($sql);
                 <div class="form-row">
                   <div class="form-group col-md-11">
                     <label for="bname">Name of the Book:</label>
-                    <input type="text" class="form-control" id="bname" placeholder="Arthur" required>
+                    <input type="text" class="form-control" id="bname" value="<?php $_GET["name"];?>" required>
                   </div>
                   <br>
                   <div class="form-group col-md-11">
@@ -199,31 +235,7 @@ $result = $link->query($sql);
      
           </div>
         
-        </div></td>
-        
-        
-    </tr>
-    <?php 
-                while($rows=$result->fetch_assoc())
-                {
-             ?>
-  <tr>
-    <td><?php echo $rows["name"];?></td>
-    <td><?php echo $rows["author"];?></td>
-    <td><?php echo $rows["edition"];?></td>
-    <td><?php echo $rows["semester"];?></td>
-    <td><?php echo $rows["subject"];?></td>
-    <td><?php echo $rows["price"];?></td>
-    <td><?php echo $rows["availability"];?></td>
-    <td><button class="bmt" type="submit">Edit</button></td>
-  </tr>
- <?php  }?>
-</table>
-<div class="container">
-  <center><div style="margin: 10px;">
-    <a href="books.php"><button class="btn btn-primary">ADD BOOK</button></a>
-  </div></center>
-</div>
+        </div>
 <script src="sellerbook.js"></script>
 </body>
 </html>		
