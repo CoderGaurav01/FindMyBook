@@ -21,10 +21,11 @@ $result = $link->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <link rel="stylesheet" href="public/css/style2.css">
+    <link rel="stylesheet" href="public\css\style2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="public\css\sellerbooks.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   
     
     <style>
@@ -48,9 +49,7 @@ $result = $link->query($sql);
         .fa-coffee {
             font-size: 200px
         }
-    </style>
 
-<style>
     #customers {
       font-family: Arial, Helvetica, sans-serif;
       border-collapse: collapse;
@@ -80,23 +79,23 @@ $result = $link->query($sql);
 
 <body>
 
-    <!-- Navbar -->
-    <div class="top">
-        <div class="bar teal card left-align medium">
-            <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="index.html" class="bar-item button padding-large white">Home</a>
-            <a href="#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
-            <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
-            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
-        </div>
-
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="bar-block hide hide-large hide-medium large">
-            <a href="#about_us" class="bar-item button padding-large">About Us</a>
-            <a href="login.php" class="bar-item button padding-large">Sell</a>
-           <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
-        </div>
-    </div>
+<div class="container=100% card teal" >
+  <div class="row align-items-start  "  >
+    
+    
+            <a class="bar-item  hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+           <div class="col-md-1" style="margin: 0%; padding: 0%;">
+              <a href="welcome.php" class="bar-item buttonn  hover-white" style="background-color:white; color: black; text-align: center; ">Profile</a>
+            </div>
+            <div class="col-md-1" style="margin: 0%; padding: 0%;" >
+              <a href="sellerbooks.php" class="bar-item buttonn hide-small  hover-white" style="text-align: center;"  >Your Books</a>
+            </div>
+            <div class="col-md-1 offset-md-9"  >
+              <a href="logout.php" class="bar-item buttonn hide-small  hover-white " style="text-align: center;"  >Logout</a>
+            </div>
+        
+  </div>
+</div>
    
    
     <br>
@@ -168,9 +167,9 @@ $result = $link->query($sql);
                 </div>
     <br>
                 <div class="row">
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-8">
                     <label for="edition">Edition:</label>
-                    <input type="number" class="form-control" id="edition"  style="width: 20%" placeholder="6th" min="1">
+                    <input type="number" class="form-control" id="edition"  style="width: 30%" placeholder="6th" min="1">
                   </div>
                   
                   <br>
@@ -181,7 +180,7 @@ $result = $link->query($sql);
                 </div>
                 <br>
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-10">
                       <label for="priice">Price:</label>
                       <input type="text" class="form-control" id="price"  style="width: 30%"  placeholder="₹250" required>
                     </div>
