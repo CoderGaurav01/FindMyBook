@@ -187,7 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
 
               <label for="phone">Phone No(+91):</label>
-              <input type="tel" id="phone" name="phone" required size="10">
+              <input type="tel" pattern="[1-9]{1}[0-9]{9}" id="phone" name="phone" required size="10">
 
               <label for="address">Address: </label>
               <input type="text" id="address" name="address" required placeholder="1234 Main S"> 
