@@ -1,3 +1,18 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+$id=$_SESSION["id"];
+require_once "config.php";
+$sql = "SELECT * FROM books WHERE user_id=$id";
+$result = $link->query($sql);
+//$data = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,6 +123,9 @@
     
  
   </tr>
+ 
+    
+  
   <tr>
     <td>Higher Engineering Mathematics</td>
     <td>Dr.B.S Grewal</td>
@@ -185,19 +203,27 @@
         
         
     </tr>
-
+    <?php 
+                while($rows=$result->fetch_assoc())
+                {
+             ?>
   <tr>
-    <td>Higher Engineering Mathematics</td>
-    <td>Dr.B.S Grewal</td>
-    <td>39</td>
-    <td>3</td>
-    <td>Applied Mathematics</td>
-    <td>850</td>
-    <td>2</td>
+    <td><?php echo $rows["name"];?></td>
+    <td><?php echo $rows["author"];?></td>
+    <td><?php echo $rows["edition"];?></td>
+    <td><?php echo $rows["semester"];?></td>
+    <td><?php echo $rows["subject"];?></td>
+    <td><?php echo $rows["price"];?></td>
+    <td><?php echo $rows["availability"];?></td>
     <td><button class="bmt" type="submit">Edit</button></td>
   </tr>
- 
+ <?php  }?>
 </table>
+<div class="container">
+  <center><div style="margin: 10px;">
+    <a href="books.php"><button class="btn btn-primary">ADD BOOK</button></a>
+  </div></center>
+</div>
 <script src="sellerbook.js"></script>
 </body>
-</html>
+</html>		

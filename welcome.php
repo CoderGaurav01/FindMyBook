@@ -39,8 +39,11 @@ $data = $result->fetch_assoc();
    <div class="bar teal card left-align medium container=100%">
     <div class="row">
            <!--  <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> -->
-           <div class="col"  >
-            <a href="index.html" class="bar-item button padding-large white homebtn">Home</a>
+           <div class="col-md-1"  >
+            <a href="index.html" class="bar-item button white homebtn">Home</a>
+          </div>
+          <div class="col-md-1"  >
+            <a href="sellerbooks.php" class="bar-item button " style="left: 0px;">Books</a>
           </div>
           
            <div class="col order-1 right">
@@ -50,9 +53,9 @@ $data = $result->fetch_assoc();
 
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <select class="right" name="profile" id="profile">
-                <option value="profile"> Profile</option>
-                <option value="Books">Your Books</option> 
-                <option value="change-profile">Change Profile</option>
+                <a href="welcome.php"><option value="profile"> Profile</option></a>
+                <option value="Books"><a href="sellerbooks.php">Your Books</a></option> 
+                <a href="logout.php"><option value="change-profile">Log Out</option></a>
               </select>
             </section>
               </div>
