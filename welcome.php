@@ -15,7 +15,7 @@ $data = $result->fetch_assoc();
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Welcome User</title>
   <style>
@@ -29,39 +29,54 @@ $data = $result->fetch_assoc();
             </style>
   
  
-  <link rel="stylesheet" href="C:\wamp64\www\FindMyBook\public\css\welcome.css">
 <link rel="stylesheet" href="public/css/style2.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="public/css/welcome.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<style>
+        body,
+        h1, 
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .bar,
+        h1,
+        button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-anchor,
+        .fa-coffee {
+            font-size: 200px
+        }
+    </style>
+
 </head>
 <body>
-   <div class="bar teal card left-align medium container=100%">
-    <div class="row">
-           <!--  <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> -->
-           <div class="col-md-1"  >
-            <a href="index.html" class="bar-item button white homebtn">Home</a>
-          </div>
-          <div class="col-md-1"  >
-            <a href="sellerbooks.php" class="bar-item button " style="left: 0px;">Books</a>
-          </div>
-          
-           <div class="col order-1 right">
-           
-            <section >
-                    
 
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <select class="right" name="profile" id="profile">
-                <a href="welcome.php"><option value="profile"> Profile</option></a>
-                <option value="Books"><a href="sellerbooks.php">Your Books</a></option> 
-                <a href="logout.php"><option value="change-profile">Log Out</option></a>
-              </select>
-            </section>
-              </div>
-        </div>
-            <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
-        </div>
+<div class="container=100% card teal" >
+  <div class="row align-items-start  "  >
+    
+    
+            <a class="bar-item  hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+           <div class="col-md-1" style="margin: 0%; padding: 0%;">
+              <a href="welcome.php" class="bar-item button  hover-white" style="background-color:white; color: black; text-align: center; ">Profile</a>
+            </div>
+            <div class="col-md-1" style="margin: 0%; padding: 0%;" >
+              <a href="sellerbooks.php" class="bar-item button hide-small  hover-white" style="text-align: center;"  >Your Books</a>
+            </div>
+            <div class="col-md-1 offset-md-9"  >
+              <a href="logout.php" class="bar-item button hide-small  hover-white " style="text-align: center;"  >Logout</a>
+            </div>
+        
+  </div>
+</div>
    <br>
    <br>
 

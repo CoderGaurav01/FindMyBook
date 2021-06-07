@@ -34,19 +34,57 @@ $sql = "INSERT INTO books (name,author,edition,semester,subject,price,user_id) V
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="public/css/books.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="public\css\style2.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="public\css\books.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
 
+
+    <style>
+        body,
+        h1, 
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .bar,
+        h1,
+        buttonn {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-anchor,
+        .fa-coffee {
+            font-size: 200px
+        }   
+        </style>
 </head>
 
 <body style="background-color:#EAF6F6">
   <div class="top">
-    <div class="bar teal card left-align large">
-      <!-- <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> -->
-      <a href="index.html" class="bar-item homebtn button padding-large white">Home</a>
-    </div>
+  <div class="container=100% card teal" >
+  <div class="row align-items-start  "  >
+    
+    
+            <a class="bar-item  hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+           <div class="col-md-1" style="margin: 0%; padding: 0%;">
+              <a href="welcome.php" class="bar-item buttonn  hover-white" style="background-color:white; color: black; text-align: center; ">Profile</a>
+            </div>
+            <div class="col-md-1" style="margin: 0%; padding: 0%;" >
+              <a href="sellerbooks.php" class="bar-item buttonn hide-small  hover-white" style="text-align: center;"  >Your Books</a>
+            </div>
+            <div class="col-md-1 offset-md-9"  >
+              <a href="logout.php" class="bar-item buttonn hide-small  hover-white " style="text-align: center;"  >Logout</a>
+            </div>
+        
+  </div>
+</div>
     <br><br>
 
     <form class="book" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
