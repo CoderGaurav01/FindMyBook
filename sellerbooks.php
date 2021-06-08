@@ -116,7 +116,7 @@ $result = $link->query($sql);
     <th style="width: 40px ;text-align: center;" >Semester</th>
     <th style="text-align: center;">Subject</th>
     <th style="text-align: center;">Price</th>
-    <th style="width: 40px; text-align: center;">Availability</th>
+    
     <th style="text-align: center;">Edit</th>  
    
     
@@ -137,7 +137,7 @@ $result = $link->query($sql);
     <td><?php echo $rows["semester"];?></td>
     <td><?php echo $rows["subject"];?></td>
     <td><?php echo $rows["price"];?></td>
-    <td><?php echo $rows["availability"];?></td>
+    
     <td>
       <form method="POST" action="book_action.php">
         <input name="book_id" type="hidden" value="<?php echo $rows["id"];?>">
