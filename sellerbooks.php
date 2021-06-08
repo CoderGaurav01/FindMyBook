@@ -139,14 +139,9 @@ $result = $link->query($sql);
     <td><?php echo $rows["price"];?></td>
     <td><?php echo $rows["availability"];?></td>
     <td>
-      <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <input name="name" type="hidden" value="<?php echo $rows["name"];?>">
-        <input name="author" type="hidden" value="<?php echo $rows["author"];?>">
-        <input name="edition" type="hidden" value="<?php echo $rows["edition"];?>">
-        <input name="semester" type="hidden" value="<?php echo $rows["semester"];?>">
-        <input name="subject" type="hidden" value="<?php echo $rows["subject"];?>">
-        <input name="price" type="hidden" value="<?php echo $rows["price"];?>">
-         <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button>
+      <form method="POST" action="book_action.php">
+        <input name="book_id" type="hidden" value="<?php echo $rows["id"];?>">
+         <button type="submit">Delete</button>
       </form>
     </td>
   </tr>
@@ -161,7 +156,7 @@ $result = $link->query($sql);
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h1 class="modal-title" id="exampleModalLabel"><u> Edit Book Details:</u></h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -183,7 +178,7 @@ $result = $link->query($sql);
             
         
             <form class="book">
-                <span class="close">&times;</span>
+                <span data-dismiss="modal" aria-label="Close">&times;</span>
                 <h1><u> Edit Book Details:</u></h1>
           
                 <br><br>
