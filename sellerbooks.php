@@ -125,22 +125,7 @@ $result = $link->query($sql);
  
     
   
-  <tr>
-    <td>Higher Engineering Mathematics</td>
-    <td>Dr.B.S Grewal</td>
-    <td>39</td>
-    <td>3</td>
-    <td>Applied Mathematics</td>
-    <td>850</td>
-    <td>1</td>
-    <td><!-- Trigger/Open The Modal -->
-        <button id="myBtn">Edit</button>
-        
-        <!-- The Modal -->
-        </td>
-        
-        
-    </tr>
+  
     <?php 
                 while($rows=$result->fetch_assoc())
                 {
@@ -158,11 +143,10 @@ $result = $link->query($sql);
         <input name="name" type="hidden" value="<?php echo $rows["name"];?>">
         <input name="author" type="hidden" value="<?php echo $rows["author"];?>">
         <input name="edition" type="hidden" value="<?php echo $rows["edition"];?>">
-        <input name="semester" type="hidden" value="<?php echo $rows["edition"];?>">
         <input name="semester" type="hidden" value="<?php echo $rows["semester"];?>">
         <input name="subject" type="hidden" value="<?php echo $rows["subject"];?>">
         <input name="price" type="hidden" value="<?php echo $rows["price"];?>">
-         <button id="myBtn" class="bmt" type="submit">Edit</button>
+         <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button>
       </form>
     </td>
   </tr>
@@ -172,6 +156,25 @@ $result = $link->query($sql);
   <center><div style="margin: 10px;">
     <a href="books.php"><button class="btn btn-primary">ADD BOOK</button></a>
   </div></center>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 <div id="myModal" class="modal">
         
@@ -235,6 +238,9 @@ $result = $link->query($sql);
           </div>
         
         </div>
-<script src="sellerbook.js"></script>
+<!--<script src="sellerbook.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>		
