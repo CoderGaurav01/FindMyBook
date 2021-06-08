@@ -117,7 +117,7 @@ $result = $link->query($sql);
     <th style="text-align: center;">Subject</th>
     <th style="text-align: center;">Price</th>
     
-    <th style="text-align: center;">Edit</th>  
+    <th style="text-align: center; ">Remove</th>  
    
     
  
@@ -141,7 +141,7 @@ $result = $link->query($sql);
     <td>
       <form method="POST" action="book_action.php">
         <input name="book_id" type="hidden" value="<?php echo $rows["id"];?>">
-         <button type="submit">Delete</button>
+         <button type="submit" class="btn btn-danger">Remove</button>
       </form>
     </td>
   </tr>
