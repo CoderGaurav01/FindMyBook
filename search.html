@@ -77,7 +77,7 @@
             <label for="seeAnotherField">Search books by </label>
          
           
-            <select class="form-control" id="seeAnotherField">
+            <select class="form-control" name="method" id="seeAnotherField">
                   <option value="no">None</option>
                   <option value="search">Name</option>
                   <option value="search2">Author</option>
@@ -89,7 +89,7 @@
           <br>
           <div class="form-group" id="otherFieldDiv">
             <label for="otherField">Semester</label>
-            <select class="form-control" id="otherField">
+            <select class="form-control" id="otherField" name="semester">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -102,7 +102,7 @@
 
               <br>
              <br> 
-            <input type="search" placeholder="Subject Name" size="40"></input>
+            <input type="text" name="subject" placeholder="Subject Name" size="40"></input>
 
 
           </div>
@@ -110,14 +110,14 @@
           <!-- book search bar -->
           <div class="form-group" id="searchbardiv">
  
-           <input type="search" placeholder="Book Name" size="40"></input>
+           <input type="text" name="book_name" placeholder="Book Name" size="40"></input>
           </div>
 
           
           <!-- Author search bar -->
           <div class="form-group" id="searchbardiv2">
  
-            <input type="search" placeholder="Author Name" size="40"></input>
+            <input type="text" name="author" placeholder="Author Name" size="40"></input>
            </div> 
 
            
