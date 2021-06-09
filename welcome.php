@@ -12,6 +12,19 @@ require_once "config.php";
 $sql = "SELECT * FROM user WHERE id=$id";
 $result = $link->query($sql);
 $data = $result->fetch_assoc();
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $fname=$_POST["fname"];
+  $lname=$_POST["lname"];
+  $contact=$_POST["phone"];
+  $address=$_POST["address"];
+  $sql="UPDATE user SET fname='$fname',lname='$lname',contact=$contact,address='$address' WHERE id=$id";
+  if ($link->query($sql) === TRUE) {
+    header("location: welcome.php");
+  } else {
+    echo "Error: " . $sql . "<br>" . $link->error;
+  }
+  mysqli_close($link);
+}
 
 ?>
 <!DOCTYPE html>
@@ -158,43 +171,31 @@ $data = $result->fetch_assoc();
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                               <fieldset>
          
                                 <label for="name">First Name:</label>
-                                <input type="text" id="name" name="user_name" placeholder="Johny" required>
+                                <input type="text" id="name" value="<?php echo $data["fname"];?>" name="fname" placeholder="Johny" required>
                   
                                 <label for="name" >Last Name:</label>
-                                <input type="text" id="name" name="user_name" placeholder="Christian">
+                                <input type="text" id="name" value="<?php echo $data["lname"];?>" name="lname" placeholder="Christian">
                                 
                                 <label for="mail">Email:</label>
-                                <input type="email" id="mail" name="user_email" required placeholder="abc@xyz.com">
-                                
-                                <label for="password">Password:</label>
-                                <input type="password" id="password" name="user_password">
+                                <input type="email" id="mail" name="email" value="<?php echo $data["email"];?>" required placeholder="abc@xyz.com" readonly>
                   
                                 <label for="phone">Phone No(+91):</label>
-                                <input type="tel" id="phone" name="phone" required size="10" >
+                                <input type="tel" id="phone" value="<?php echo $data["contact"];?>" name="phone" required size="10" >
                   
                                 <label for="address">Address: </label>
-                                <input type="text" id="address" name="address" required placeholder="1234 Main S"> 
-                                
-                                <label for="address"> City: </label>
-                                <input type="city" id="address" name="address"   required placeholder="Chicago">
-                                
-                                
-                                <label for="address">State: </label>
-                                <input type="state" id="address" name="address" required placeholder="California">       
-                                <br>
-                                <label for="address">Zip: </label>
-                                <input type="zip" id="address" name="address" required placeholder="90011">  
-                          
+                                <input type="text" id="address" name="address" value="<?php echo $data["address"];?>" required placeholder="1234 Main S">                           
+                              
                               </fieldset>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-primary">Update</button>
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                             
+                              <button type="submit" class="btn btn-primary">Update</button>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
                             </div>
+      </form>
                           </div>
                         </div>
                       </div>
