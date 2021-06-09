@@ -101,7 +101,7 @@ $result = $link->query($sql);
                 <a href="index.html" class="bar-item buttonn hide-small  hover-white" style="text-align: center;"  >About Us</a>
               </div>
               <div class="col-md-1" style="margin: 0%; padding: 0%;" >
-                <a href="login.html" class="bar-item buttonn hide-small  hover-white" style="text-align: center;padding-left:0px ;"  >Sell</a>
+                <a href="login.php" class="bar-item buttonn hide-small  hover-white" style="text-align: center;padding-left:0px ;"  >Sell</a>
               </div>
               
     </div>
