@@ -580,7 +580,7 @@ a {
 
 .bar .bar-item {
     padding: 8px 16px;
-    float: right;
+    float: left;
     width: auto;
     border: none;
     display: block;

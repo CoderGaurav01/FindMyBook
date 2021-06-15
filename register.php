@@ -156,9 +156,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Navbar --> <div class="top">
         <div class="bar teal card left-align large">
             <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="index.html" class="bar-item button padding-large white">Home</a>
-            <a href="#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
-            <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
+            <a href="index.html" class="bar-item button padding-large left white">Home</a>
+            <a href="#about_us" class="bar-item button hide-small left padding-large hover-white">About Us</a>
+            <a href="login.php" class="bar-item button hide-small left padding-large hover-white">Sell</a>
         </div>
    
         <br><br>    
@@ -169,10 +169,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <fieldset>
          
               <label for="fname">First Name:</label>
-              <input type="text" id="fname" name="fname" placeholder="Johny" required>
+              <input type="text" id="fname" name="fname" placeholder="" required>
 
               <label for="lname" >Last Name:</label>
-              <input type="text" id="lname" name="lname" placeholder="Christian">
+              <input type="text" id="lname" name="lname" placeholder="">
               
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required placeholder="abc@xyz.com">
@@ -190,16 +190,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <input type="tel" pattern="[1-9]{1}[0-9]{9}" id="phone" name="phone" required size="10">
 
               <label for="address">Address: </label>
-              <input type="text" id="address" name="address" required placeholder="1234 Main S"> 
+              <input type="text" id="address" name="address" required placeholder=""> 
               
               <label for="city"> City: </label>
-              <input type="text" id="city" name="city"   required placeholder="chicago"> 
+              <input type="text" id="city" name="city"   required placeholder=""> 
               
               <label for="state">State: </label>
-              <input type="text" id="state" name="state" required placeholder="California">       
+              <input type="text" id="state" name="state" required placeholder="">       
               
               <label for="zip">Zip: </label>
-              <input type="zip" id="zip" name="zip" required placeholder="90011">  
+              <input type="zip" id="zip" name="zip" required placeholder="">  
               
         
             </fieldset>
