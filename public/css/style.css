@@ -112,7 +112,7 @@ figure {
     margin: 1em 40px
 }
 
-img {
+.img2 {
     border-style: none
 }
 
@@ -295,7 +295,7 @@ hr {
     height: auto
 }
 
-img {
+.img2{
     vertical-align: middle
 }
 
@@ -1999,10 +1999,10 @@ a {
     border-color: #e7ffff !important
 }
 
-img
+.img2
 {
-width: 350px;
-height: 250px;
+width: 10rem;
+height: 10rem;
 
 }
 
