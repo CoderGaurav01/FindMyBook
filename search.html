@@ -50,91 +50,105 @@
             <a href="index.html" class="bar-item button padding-large white">Home</a>
             <a href="#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
             <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
-        
+
             <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="bar-block hide hide-large hide-medium large">
+                <a href="#about_us" class="bar-item button padding-large">About Us</a>
+                <a href="login.php" class="bar-item button padding-large">Sell</a>
+                <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
+            </div>
         </div>
 
-        
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="bar-block hide hide-large hide-medium large">
-            <a href="#about_us" class="bar-item button padding-large">About Us</a>
-            <a href="login.php" class="bar-item button padding-large">Sell</a>
-           <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
-        </div>
+
     </div>
-   
-        <br><br>
 
-        <img src="public/images/logo2.png" alt="find your book " class="logo img2" style="vertical-align:middle;margin:50px 350px" >
-
-  
-        <br>
-<div class="cont">
-        <form class="p-3" method="POST" action="search_books.php">
-          
-          
-          <div class="form-group">
-            <label for="seeAnotherField">Search books by </label>
-         
-          
-            <select class="form-control" name="method" id="seeAnotherField">
-                  <option value="no">None</option>
-                  <option value="search">Name</option>
-                  <option value="search2">Author</option>
-                  <option value="yes">Semester</option>
-
-            </select>
-          </div>
-          <br>
-          <br>
-          <div class="form-group" id="otherFieldDiv">
-            <label for="otherField">Semester</label>
-            <select class="form-control" id="otherField" name="semester">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              </select>
-
-              <br>
-             <br> 
-            <input type="text" name="subject" placeholder="Subject Name" size="40"></input>
-
-
-          </div>
-
-          <!-- book search bar -->
-          <div class="form-group" id="searchbardiv">
- 
-           <input type="text" name="book_name" placeholder="Book Name" size="40"></input>
-          </div>
-
-          
-          <!-- Author search bar -->
-          <div class="form-group" id="searchbardiv2">
- 
-            <input type="text" name="author" placeholder="Author Name" size="40"></input>
-           </div> 
-
-           
-
-<br>
-<br>
-          <center>
-          
-          <button type="submit" class="btn">Submit</button>
-        </center>
-        </form>
+    <br><br>
+    <br><br>
+    <center>
+    <img src="public/images/logo2.png" alt="find your book " class="" style="margin-left: 10vw; margin-right: 10vw ; width: 80vw; max-width: 600px; align-content:center">
         
-</div>    
-         
-       
-       <script src="public/js/search.js"> 
-      </script> 
-      
-        </body>
+
+    <br><br>
+    <div class="cont" style="margin-left: 10vw; margin-right: 10vw ; ">
+        <form class="p-3" method="POST" action="search_books.php">
+
+
+            <div class="form-group">
+                <label for="seeAnotherField">Search books by </label>
+
+
+                <select class="form-control" name="method" id="seeAnotherField">
+                    <option value="no">None</option>
+                    <option value="search">Name</option>
+                    <option value="search2">Author</option>
+                    <option value="yes">Semester</option>
+
+                </select>
+            </div>
+            <br>
+            <br>
+            <div class="form-group" id="otherFieldDiv">
+                <label for="otherField">Semester</label>
+                <select class="form-control" id="otherField" name="semester">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </select>
+
+                <br>
+                <br>
+                <input type="text" name="subject" placeholder="Subject Name" size="40"></input>
+
+
+            </div>
+
+            <!-- book search bar -->
+            <div class="form-group" id="searchbardiv">
+
+                <input type="text" name="book_name" placeholder="Book Name" size="40"></input>
+            </div>
+
+
+            <!-- Author search bar -->
+            <div class="form-group" id="searchbardiv2">
+
+                <input type="text" name="author" placeholder="Author Name" size="40"></input>
+            </div>
+
+
+
+            <br>
+            <br>
+            <center>
+
+                <button type="submit" class="btn">Submit</button>
+            </center>
+        </form>
+
+    </div>
+        </center>
+
+
+    <script src="public/js/search.js">
+
+    </script>
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("show") == -1) {
+                x.className += " show";
+            } else {
+                x.className = x.className.replace(" show", "");
+            }
+        }
+    </script>
+
+</body>
 </html>

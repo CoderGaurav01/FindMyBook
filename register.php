@@ -157,8 +157,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="bar teal card left-align large">
             <a class="bar-item button hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <a href="index.html" class="bar-item button padding-large left white">Home</a>
-            <a href="#about_us" class="bar-item button hide-small left padding-large hover-white">About Us</a>
+            <a href="index.html" class="bar-item button hide-small left padding-large hover-white">About Us</a>
             <a href="login.php" class="bar-item button hide-small left padding-large hover-white">Sell</a>
+        </div>
+
+         <!-- Navbar on small screens -->
+        <div id="navDemo" class="bar-block hide hide-large hide-medium large">
+            <a href="#about_us" class="bar-item button padding-large">About Us</a>
+            <a href="login.php" class="bar-item button padding-large">Sell</a>
+           <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
+        </div>
         </div>
    
         <br><br>    
@@ -209,7 +217,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            <input type="submit" class="btn buttonn"value="Sign Up">
           </form>
           
-        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("show") == -1) {
+                x.className += " show";
+            } else {
+                x.className = x.className.replace(" show", "");
+            }
+        }
+    </script>
        
         </body>
 </html>

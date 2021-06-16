@@ -94,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/style3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,6 +137,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <a href="index.html#about_us" class="bar-item button hide-small padding-large hover-white">About Us</a>
             <a href="login.php" class="bar-item button hide-small padding-large hover-white">Sell</a>
             <!--<a href="#" class="bar-item button hide-small padding-large hover-white">Vendor</a>-->
+
+            <!-- Navbar on small screens -->
+        <div id="navDemo" class="bar-block hide hide-large hide-medium large">
+            <a href="#about_us" class="bar-item button padding-large">About Us</a>
+            <a href="login.php" class="bar-item button padding-large">Sell</a>
+           <!--<a href="#" class="bar-item button padding-large">Vendor</a>-->
+        </div>
         </div>
 
         <br><br>
@@ -144,7 +151,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div>
                 <div>
                     <div class="col-md-6">
-                        <div class="card">
+                        <div class="">
                             <form class="box" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                                 <h1>Login</h1>
                                 <p class="text-muted"> Please enter your login and password!</p>
@@ -177,6 +184,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
         <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+         <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("show") == -1) {
+                x.className += " show";
+            } else {
+                x.className = x.className.replace(" show", "");
+            }
+        }
+    </script>
 </body>
 
 </html>

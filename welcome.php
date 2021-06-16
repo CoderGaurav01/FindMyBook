@@ -77,7 +77,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="row align-items-start  "  >
     
     
-            <a class="bar-item  hide-medium hide-large right padding-large hover-white large teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
            <div class="col-md-1" style="margin: 0%; padding: 0%;">
               <a href="welcome.php" class="bar-item button  hover-white" style="background-color:white; color: black; text-align: center; ">Profile</a>
             </div>
@@ -105,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle img" width="150">
                     <div class="mt-3">
                       <h4><?php echo $data["fname"]." ".$data["lname"]?></h4>
                      

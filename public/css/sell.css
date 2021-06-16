@@ -16,7 +16,7 @@
 .box {
   width: 500px;
   padding: 40px;
-  position: absolute;
+  position: sticky;
   top: 50%;
   left: 35%;
   background: linear-gradient(to right, #f6dfeb,#caf7e3)
