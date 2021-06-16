@@ -86,7 +86,7 @@ $sql = "INSERT INTO books (name,author,edition,semester,subject,price,user_id) V
   </div>
 </div>
     <br><br>
-
+    <div style="position: sticky;">
     <form class="book" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
       <h1>Enter Book Details:</h1>
       <br><br>
@@ -126,7 +126,7 @@ $sql = "INSERT INTO books (name,author,edition,semester,subject,price,user_id) V
       <br>
       <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
-
+    </div>
 
 </body>
 
