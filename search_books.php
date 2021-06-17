@@ -201,6 +201,13 @@ $result = $link->query($sql);
   </tr>
   
  <?php }?>
+ <?php 
+  if(mysqli_num_rows($result)==0){?>
+  <tr>
+    <td colspan="7" style="text-align: center;">Sorry!! Nothing to match your search. <a href="search.html">Try again</a></td>
+  </tr>
+ <?php }
+ ?>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
